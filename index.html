@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+    font-family: cursive;
+    font-weight: 600;
+}
+#content{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+#ball{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: rgb(132, 132, 132);
+    box-shadow: 1px 1px 15px black,inset 9px -7px 20px black;
+    align-items: center;
+    margin-top: 100px;
+}
+.buttons{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 100px;
+}
+button{
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    box-shadow: 1px 1px 5px black,inset 9px -7px 20px black;
+    transition: 0.5s;
+}
+button:hover{
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    box-shadow: 1px 1px 5px black,inset 9px -7px 20px black;
+}
+.V{
+    background-color: violet;
+}
+.I{
+    background-color: indigo;
+}
+.B{
+    background-color: blue;
+}
+.G{
+    background-color: green;
+}
+.O{
+    background-color: orange;
+}
+.Y{
+    background-color: yellow;
+}
+.R{
+    background-color: red;
+}
+h2{
+    margin-top: 70px;
+}
+#input{
+    border-radius: 50px;
+    font-size: larger;
+    text-align: center;
+}
+    </style>
+</head>
+<body>
+    <div id="content">
+    <h1>Chnage the color of the ball</h1>
+    <div id="ball"></div>
+    <div class="buttons">
+        <button class="V"></button>
+        <button class="I"></button>
+        <button class="B"></button>
+        <button class="G"></button>
+        <button class="Y"></button>
+        <button class="O"></button>
+        <button class="R"></button>
+    </div>
+    <div>
+        <h2>also you can write a name of a color</h2>
+        <input type="text" name="" id="input" placeholder="name of the color">
+    </div>
+</div>
+    <!-- <a href="www.google.com">click me</a> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $("h1").before("<h1>Welcome</h1>");
+$("button").click(function(){
+    $("#ball").css("backgroundColor",$(this).css("backgroundColor"));
+});
+$(document).keypress((event)=>{
+    if(event.key=="Enter"){
+        $("#ball").css("backgroundColor",$("#input").val().trim().toLowerCase());
+    }
+});
+    </script>
+</body>
+</html>
